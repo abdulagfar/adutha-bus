@@ -1,6 +1,8 @@
 body {
 	/* background-image: src("{% static 'backgroung_image.jpg' %} ") */
-	background-image: url('/static/background_image.jpg')
+	background: url('/static/background_image.jpg') no-repeat center center fixed; 
+
+	background-size: cover;
 }
 
 .main_form {
@@ -14,7 +16,7 @@ body {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: yellow;
+	background: rgba(255, 255, 0, 0.432);
 	padding: 50px;
 	border-radius: 20px;
 
@@ -30,6 +32,8 @@ input {
 
 button {
 	padding: 10px;
+	padding-left:20px;
+	padding-right: 20px; 
 	background-color: rgb(1, 1, 77);
 	border-radius: 5px;
 	color: aliceblue;

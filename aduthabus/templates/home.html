@@ -5,9 +5,9 @@
 
 <div class="main_form">
 
-    <div class="logo">
-        <img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
-    </div>
+        <div class="logo">
+                <img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
+            </div>
 
     <form action="." method='POST'>
         {% csrf_token %}
@@ -20,7 +20,7 @@
         <button type="submit" value="get time">Get Time</button>
     </form>
     
-    <a href="{% url 'bus:redirect_to_login' %}">Login</a>
+    
 </div>
 
 {% endblock content %}

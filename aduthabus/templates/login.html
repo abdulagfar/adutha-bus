@@ -2,13 +2,18 @@
 
 {% block content %}
 
-<div>
+
+
+<div class="main_form">
+	<h1> Login</h1>
 	<form action="{% url 'bus:admin_login' %}" method="POST">
 		{% csrf_token %}
-		<input type="text" name="username" placeholder="admin username">
-		<input type="password" name="password" placeholder="password">
+		<p><input type="text" name="username" placeholder="admin username"></p>
+		<p><input type="password" name="password" placeholder="password"></p>
+		
 
-		<input type="submit" value="Login">
+		<button  type="submit">Login</button>
+		
 	</form>
 </div>
 {% endblock content %}
