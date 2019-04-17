@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h5>Add Data</h5>
 
-<a href="{% url 'admin_logout'%}">logout</a>
 
-<form action="{% url 'bus:add_data'%}" method="POST">
-	{% csrf_token %}
+<button style="float: right; background-color: rgba(255, 217, 0, 0.459);" type=""><a style =" color:rgb(6, 7, 8); text-decoration: none; font-weight: bold;font-size: 14px;" href="{% url 'admin_logout'%}">Logout</a></button>
 
-	<input type="text" placeholder="Bus Name">
-	<br>
-	<input type="text" placeholder="Bus Number">
-	<br> 
-
-	<br>
-	<input type="submit" value="Add Data">
-</form>
+<div class="main_form">
+	<h1>Add Data</h1>
+		<form action="{% url 'bus:add_data'%}" method="POST">
+				{% csrf_token %}
+			
+				<input type="text" placeholder="Bus Name">
+				<br>
+				<input type="text" placeholder="Bus Number">
+				<br> 
+			
+				<br>
+				<input type="submit" value="Add Data">
+			</form>
+</div>
 {% endblock content %}
