@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+<style>
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+  td{
+    cursor:pointer;
+  }
+  </style>
+  
+  
+  {% if d%}
+  <table>
+    <tr>
+      <th>BUS NAME</th>
+      <th>{{s}}</th> 
+      <th>{{r}}</th>
+    </tr>
+  
+    {% for i in d  %}
+  
+     <tr onclick="window.location='/bus_details/{{i.b_id}}/';"><td>{{i.b_name}}</td>
+      <td>{{i.s_time}}</td> 
+      <td>{{i.r_time}}</td>
+    </tr>
+    {% endfor %}
+    
+    </table>
+    {% else %}
+  
+    <p> data is unavilable</p>
+    {% endif %}
+  
+  
+{% endblock content %}

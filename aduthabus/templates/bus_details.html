@@ -1,0 +1,82 @@
+ {% extends "base.html" %}
+ 
+{% block content %}
+  
+
+
+<style>
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+  </style>
+  
+  
+  {% if bus%}
+  <table>
+    <tr>
+      <th>BUS NAME :</th>
+      <th>{{bus.bus_name}}</th> 
+    </tr>
+  
+    {% if bus.st_1 %}
+    <tr>
+      <td>{{bus.st_1}}</td>
+      <td>{{bus.t_1}}</td> 
+      
+    </tr>
+    {% endif%} 
+    {% if bus.st_2 %}
+    <tr>
+      <td>{{bus.st_2}}</td>
+      <td>{{bus.t_2}}</td> 
+      
+    </tr>
+    {% endif%} 
+    {% if bus.st_3 %}
+    <tr>
+      <td>{{bus.st_3}}</td>
+      <td>{{bus.t_3}}</td> 
+      
+    </tr>
+    {% endif%}
+     {% if bus.st_4 %}
+    <tr>
+      <td>{{bus.st_4}}</td>
+      <td>{{bus.t_4}}</td> 
+      
+    </tr>
+    {% endif%} 
+    {% if bus.st_5 %}
+    <tr>
+      <td>{{bus.st_5}}</td>
+      <td>{{bus.t_5}}</td> 
+      
+    </tr>
+    {% endif%}
+     {% if bus.st_6 %}
+    <tr>
+      <td>{{bus.st_6}}</td>
+      <td>{{bus.t_6}}</td> 
+      
+    </tr>
+    {% endif%}
+    </table>
+    {% else %}
+  
+    <p> data is unavilable</p>
+    {% endif %} 
+  
+  
+{% endblock content %}
