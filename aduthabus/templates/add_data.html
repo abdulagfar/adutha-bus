@@ -1,1 +1,19 @@
-<h1>Add Data</h1>
+{% extends "base.html" %}
+
+{% block content %}
+<h5>Add Data</h5>
+
+<a href="{% url 'admin_logout'%}">logout</a>
+
+<form action="{% url 'bus:add_data'%}" method="POST">
+	{% csrf_token %}
+
+	<input type="text" placeholder="Bus Name">
+	<br>
+	<input type="text" placeholder="Bus Number">
+	<br> 
+
+	<br>
+	<input type="submit" value="Add Data">
+</form>
+{% endblock content %}

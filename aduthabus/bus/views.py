@@ -85,3 +85,12 @@ def admin_login(request):
             return HttpResponse('Login Failed')
     else:
         return render(request, 'login.html')
+
+@login_required
+def add_data(request):
+    pass
+
+@login_required
+def admin_logout(request):
+    logout(request)
+    return render(request, 'login.html')
