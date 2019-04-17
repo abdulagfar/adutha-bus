@@ -2,6 +2,10 @@ from django.shortcuts import render
 from .models import bus_timetable
 from collections import OrderedDict 
 from django.http import Http404
+
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import authenticate, login, logout
   
 
 def home_page(request,*args,**kargs):
@@ -65,3 +69,19 @@ def bus_details(request,id,*args,**kargs):
         raise Http404
     context={"bus":bus} 
     return render(request,"bus_details.html",context)
+
+def redirect_to_login(request):
+    return render(request, 'login.html')
+
+def admin_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            return render(request, 'add_data.html')
+        else:
+            return HttpResponse('Login Failed')
+    else:
+        return render(request, 'login.html')
