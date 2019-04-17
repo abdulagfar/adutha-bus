@@ -26,4 +26,5 @@ urlpatterns = [
     path('home/', home_page),
     path('admin/', admin.site.urls),
     path("bus_details/<int:id>/",bus_details),
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

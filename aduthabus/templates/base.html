@@ -7,64 +7,12 @@
         <title>ADUTHA_BUS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link href="{% static "css/main.css" %}" rel="stylesheet"> -->
-        <style>
-            body {
-                background-image: src("{% static 'backgroung_image.jpg' %} ")
-            }
-
-            .main_form {
-                display: inline-block;
-                position: fixed;
-                text-align: center;
-                width: 25%;
-                height: 300px;
-                margin: auto;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: yellow;
-                padding: 50px;
-                border-radius: 20px;
-
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-
-            .logo {}
-
-            input {
-                margin: 10px;
-                padding: 10px;
-                font-size: 12px;
-                border-radius: 50px;
-            }
-
-            button {
-                padding: 10px;
-                background-color: rgb(1, 1, 77);
-                border-radius: 5px;
-                color: aliceblue;
-
-                border: none;
-
-
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 12px;
-            }
-
-            button:hover {
-                background-color: rgba(2, 2, 209, 0.459);
-            }
-        </style>
+        <link rel="stylesheet" href="{% static '/css/base.css' %}">
     </head>
 
     <body>
         {% block content %}
         {% endblock content %}
-
     </body>
 
 </html>
