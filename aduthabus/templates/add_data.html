@@ -3,35 +3,43 @@
 {% block content %}
 
 
-<button class="logout"><a style="color:rgb(6, 7, 8); text-decoration: none; font-weight: bold;font-size: 14px;" href="{% url 'bus:admin_logout'%}">Logout</a></button>
-
-<div class="add_data">
-	<h1>Add Data</h1>
-	<p>{{success_message}}</p>
-	<form action="{% url 'bus:add_data'%}" method="POST">
-		{% csrf_token %}
-
-		<input type="text" name="bus_name" placeholder="Bus Name" autofocus>
-		<br>
-		<input type="text" name="bus_number" placeholder="Bus Number">
-		<br>
-
-		<p>Stations</p>
-		<div>
-			<input type="text" name="station1" placeholder="station1">
-			<input type="time" name="time1" placeholder="time">
+<div class="add_data_div">
+		<button class="logout" ><a class="for_a" href="{% url 'bus:admin_logout'%}">Logout</a></button>
+		<div class="add_data">
+			
+		
+			<h1>Add Data</h1>
+			
+			
+			<p>{{success_message}}</p>
+			<form action="{% url 'bus:add_data'%}"  method="POST">
+				{% csrf_token %}
+		
+				<div style="text-align: left;">
+						<input type="text" name="bus_name" placeholder="Bus Name" autofocus>
+						<br>
+						<input type="text" name="bus_number" placeholder="Bus Number">
+						<br>
+				
+					
+						<div>
+							<input type="text" name="station1" placeholder="station1">
+							<input type="time" name="time1" placeholder="time">
+						</div>
+						<div>
+							<input type="text" name="station2" placeholder="station2">
+							<input type="time" name="time2" placeholder="time">
+						</div>
+						<div>
+							<input type="text" name="station3" placeholder="station3">
+							<input type="time" name="time3" placeholder="time">
+						</div>
+				</div>
+		
+				<br>
+				<button style="text-align: center; font-size: 14px;" type="submit" >Save</button>
+				
+			</form>
 		</div>
-		<div>
-			<input type="text" name="station2" placeholder="station2">
-			<input type="time" name="time2" placeholder="time">
-		</div>
-		<div>
-			<input type="text" name="station3" placeholder="station3">
-			<input type="time" name="time3" placeholder="time">
-		</div>
-
-		<br>
-		<button type="submit" >Add Data</button>
-	</form>
 </div>
 {% endblock content %}
