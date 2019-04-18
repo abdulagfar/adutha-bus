@@ -18,16 +18,9 @@ from django.urls import path, include
 
 from django.conf import settings
 from django.conf.urls.static import static
-from bus.views import home_page, show_table, bus_details, admin_logout
 
 urlpatterns = [
-    path('logout/', admin_logout, name='admin_logout'),
-    path('', home_page, name='home_page'),
-    path('table/', show_table),
-    path('home/', home_page),
     path('admin/', admin.site.urls),
-    path("bus_details/<int:id>/", bus_details),
-
-    path('bus/', include('bus.urls'))
+    path('', include('bus.urls'))
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
