@@ -95,7 +95,24 @@ def admin_login(request):
 
 @login_required
 def add_data(request):
-    pass
+    context = {}
+    if request.method == 'POST':
+        bus_name = request.POST.get('bus_name')
+        bus_number = request.POST.get('bus_number')
+
+        station1 = request.POST.get('station1')
+        time1 = request.POST.get('time1')
+        station2 = request.POST.get('station2')
+        time2 = request.POST.get('time2')
+        station3 = request.POST.get('station3')
+        time3 = request.POST.get('time3')
+
+        data = bus_timetable(bus_name=bus_name, bus_no=bus_number, st_1=station1, t_1=time1, st_2=station2, t_2=time2, st_3=station3, t_3=time3)
+        data.save()
+
+        context['success_message'] = 'Data Added'
+
+    return render(request, 'add_data.html', context)
 
 @login_required
 def admin_logout(request):
