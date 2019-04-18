@@ -9,7 +9,7 @@
         <img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
     </div>
 
-    <form action="{% url 'home_page' %}" method='POST'>
+    <form action="{% url 'bus:home_page' %}" method='POST'>
         {% csrf_token %}
         {% if unavailable_msg %}
             <p style="color:red">**{{unavailable_msg}}</p>
