@@ -24,44 +24,40 @@
 					
 						<div>
 								<input type="text" name="station1" placeholder="station1">
-								<input type="time" name="time1" placeholder="time">
+								<input type="time" name="time1"  value="00:00">
 							</div>
 							<div>
 								<input type="text" name="station2" placeholder="station2">
-								<input type="time" name="time2" placeholder="time">
+								<input type="time" name="time2" value="00:00">
 							</div>
 							<div>
 								<input type="text" name="station3" placeholder="station3">
-								<input type="time" name="time3" placeholder="time">
+								<input type="time" name="time3" value="00:00">
 								<button id="btn_add_more" type="button" onclick="add_more()">add more +</button>
 							</div>
 							<script>
 				function add_more() {
-    var x = document.getElementById("add_more");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-      document.getElementById("btn_add_more").style.display==="none";
-    } else {
-      x.style.display = "none";
-    }
-  }
-
-
-
-							
+									var x = document.getElementById("add_more");
+									if (x.style.display === "none") {
+									x.style.display = "block";
+									document.getElementById("btn_add_more").style.display==="none";
+									} else {
+									x.style.display = "none";
+									}
+								}	
 							</script>
 						<div id="add_more">
 								<div>
 										<input type="text" name="station4" placeholder="station4">
-										<input type="time" name="time1" placeholder="time">
+										<input type="time" name="time1" value="00:00">
 									</div>
 									<div>
 										<input type="text" name="station5" placeholder="station5">
-										<input type="time" name="time2" placeholder="time">
+										<input type="time" name="time2" value="00:00">
 									</div>
 									<div>
 										<input type="text" name="station6" placeholder="station6">
-										<input type="time" name="time3" placeholder="time">
+										<input type="time" name="time3" value="00:00">
 									</div>
 						</div>
 				</div>
