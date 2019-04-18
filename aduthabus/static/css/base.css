@@ -81,3 +81,8 @@ button:hover {
 	font-weight: bold;
 	font-size: 14px;
 }
+
+
+#add_more{
+	display: none;
+}
