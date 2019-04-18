@@ -12,7 +12,7 @@
     <form action="{% url 'home_page' %}" method='POST'>
         {% csrf_token %}
         {% if unavailable_msg %}
-            <p>{{unavailable_msg}}</p>
+            <p style="color:red">**{{unavailable_msg}}</p>
         {% endif %}
         <!-- <p style="text-align:left">From :</p> -->
         <input type="text" name="q_source" placeholder="source" />
