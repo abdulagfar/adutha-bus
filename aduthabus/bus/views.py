@@ -31,7 +31,7 @@ def show_table(request, q_s, q_d, *args, **kargs):
     
     for o in all_roots:
         got_s=False
-        print(o.id)
+        
         data = OrderedDict([ 
                                  (o.st_1, o.t_1), 
                                  (o.st_2, o.t_2),
@@ -42,11 +42,11 @@ def show_table(request, q_s, q_d, *args, **kargs):
                                 ]) 
         
         for i ,t in data.items():
-            # print(q_d)
+         
             if str(i).lower()== str(q_s).lower():
                 t_s=t
                 got_s=True
-                # print("in if one")
+             
             if str(i).lower()== str(q_d).lower() and got_s==True:
                     context={
                         "b_id":o.id,
