@@ -22,7 +22,7 @@ from bus.views import home_page, show_table, bus_details, admin_logout
 
 urlpatterns = [
     path('logout/', admin_logout, name='admin_logout'),
-    path('', home_page),
+    path('', home_page, name='home_page'),
     path('table/', show_table),
     path('home/', home_page),
     path('admin/', admin.site.urls),

@@ -8,15 +8,22 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
   
 
-def home_page(request,*args,**kargs):
+def home_page(request):
+
     if request.method=='POST':
+
         source=request.POST.get("q_source")
         destination=request.POST.get("q_destination")
-        return show_table(request,source,destination)
-    context={}
-    return render(request,"home.html",context)
 
-def show_table(request,q_s,q_d,*args,**kargs):
+        if source == '' or destination == '':
+            context = {'unavailable_msg': 'Enter source/destination.'}
+            return render(request, "home.html", context)
+
+        return show_table(request, source, destination)
+
+    return render(request, "home.html")
+
+def show_table(request, q_s, q_d, *args, **kargs):
     d=[]
   
     all_roots=bus_timetable.objects.all()

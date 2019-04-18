@@ -5,12 +5,15 @@
 
 <div class="main_form">
 
-        <div class="logo">
-                <img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
-            </div>
+    <div class="logo">
+        <img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
+    </div>
 
-    <form action="." method='POST'>
+    <form action="{% url 'home_page' %}" method='POST'>
         {% csrf_token %}
+        {% if unavailable_msg %}
+            <p>{{unavailable_msg}}</p>
+        {% endif %}
         <!-- <p style="text-align:left">From :</p> -->
         <input type="text" name="q_source" placeholder="source" />
         <!-- <p style="text-align:left ;left:10px">To :</p> -->
@@ -19,8 +22,8 @@
         <br>
         <button type="submit" value="get time">Get Time</button>
     </form>
-    
-    
+
+
 </div>
 
 {% endblock content %}
