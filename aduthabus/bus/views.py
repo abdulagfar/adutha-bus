@@ -111,6 +111,7 @@ def add_data(request):
         data.save()
 
         context['success_message'] = 'Data Added'
+        return render(request, 'add_data.html', context)
 
     return render(request, 'add_data.html', context)
 
