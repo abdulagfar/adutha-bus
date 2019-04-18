@@ -8,7 +8,7 @@
 	<h1> Login</h1>
 	<form action="{% url 'bus:admin_login' %}" method="POST">
 		{% csrf_token %}
-		<p><input type="text" name="username" placeholder="admin username"></p>
+		<p><input type="text" name="username" placeholder="admin username" autofocus></p>
 		<p><input type="password" name="password" placeholder="password"></p>
 		
 
