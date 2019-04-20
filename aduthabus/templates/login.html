@@ -1,19 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% load static %}
 
+<div class="home_body">
+		<div class="main_form">
+				<div class="logo">
+                        <img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
+                    </div>
+				<h1> Login</h1>
+				<br>
+				
+				<form action="{% url 'bus:admin_login' %}" method="POST">
+					{% csrf_token %}
+					{% if message %}
+					<p style="color:red">**{{message}}</p>
+				{% endif %}
 
-
-<div class="main_form">
-	<h1> Login</h1>
-	<form action="{% url 'bus:admin_login' %}" method="POST">
-		{% csrf_token %}
-		<p><input type="text" name="username" placeholder="admin username" autofocus></p>
-		<p><input type="password" name="password" placeholder="password"></p>
-		
-
-		<button  type="submit">Login</button>
-		
-	</form>
+					<p><input type="text" name="username" placeholder="admin username" autofocus></p>
+					<p><input type="password" name="password" placeholder="password"></p>
+					
+			<br>
+					<button  type="submit">Login</button>
+					
+				</form>
+			</div>
 </div>
+
 {% endblock content %}

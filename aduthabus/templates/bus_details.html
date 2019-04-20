@@ -3,52 +3,57 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/bus_details.css' %}">
-
+<div class="logo" align="center">
+		<img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
+	</div>
 {% if bus%}
-<table>
+<table class="container">
 	<tr>
-		<th>BUS NAME :</th>
-		<th>{{bus.bus_name}}</th>
+		<th colspan="2"><h1>BUS NAME :    {{bus.bus_name|upper}}</h1></th>
 	</tr>
-
-	{% if bus.st_1 %}
 	<tr>
-		<td>{{bus.st_1}}</td>
+		<td style="color:black; font-weight:bold;">BUS STAND</td>
+		<td style="color:black; font-weight:bold;">TIME</td>
+
+	</tr>
+	{% if bus.st_1 %}
+	<tr class="row">
+		<td>{{bus.st_1|upper}}</td>
 		<td>{{bus.t_1}}</td>
 
 	</tr>
 	{% endif%}
 	{% if bus.st_2 %}
-	<tr>
-		<td>{{bus.st_2}}</td>
+	<tr class="row">
+		<td>{{bus.st_2|upper}}</td>
 		<td>{{bus.t_2}}</td>
 
 	</tr>
 	{% endif%}
 	{% if bus.st_3 %}
-	<tr>
-		<td>{{bus.st_3}}</td>
+	<tr class="row">
+		<td>{{bus.st_3|upper}}</td>
 		<td>{{bus.t_3}}</td>
 
 	</tr>
 	{% endif%}
 	{% if bus.st_4 %}
-	<tr>
-		<td>{{bus.st_4}}</td>
+	<tr class="row">
+		<td>{{bus.st_4|upper}}</td>
 		<td>{{bus.t_4}}</td>
 
 	</tr>
 	{% endif%}
 	{% if bus.st_5 %}
-	<tr>
-		<td>{{bus.st_5}}</td>
+	<tr class="row">
+		<td>{{bus.st_5|upper}}</td>
 		<td>{{bus.t_5}}</td>
 
 	</tr>
 	{% endif%}
 	{% if bus.st_6 %}
-	<tr>
-		<td>{{bus.st_6}}</td>
+	<tr class="row">
+		<td>{{bus.st_6|upper}}</td>
 		<td>{{bus.t_6}}</td>
 
 	</tr>
@@ -60,4 +65,8 @@
 {% endif %}
 
 
+
+
 {% endblock content %}
+
+

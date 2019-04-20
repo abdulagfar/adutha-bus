@@ -16,7 +16,7 @@ def home_page(request):
         destination = request.POST.get("q_destination")
 
         if source == '' or destination == '':
-            context = {'unavailable_msg': 'Enter source/destination.'}
+            context = {'unavailable_msg': 'Enter source and destination.'}
             return render(request, "home.html", context)
 
         return show_table(request, source, destination)
@@ -57,13 +57,19 @@ def show_table(request, q_s, q_d, *args, **kargs):
                 d.append(context)
                 got_s = False
                 break
-
-    d = {"d": d,
+    if d:
+        d = {"d": d,
          "s": q_s.upper(),
          "r": q_d.upper(),
          }
+        return render(request, "show_table.html", d)
+    else:
+        context = {'unavailable_msg': 'Invalid Source/Destination.'}
+        return render(request, "home.html", context)
 
-    return render(request, "show_table.html", d)
+
+
+    
 # Create your views here.
 
 
@@ -89,7 +95,7 @@ def admin_login(request):
         if user is not None:
             return render(request, 'add_data.html')
         else:
-            return HttpResponse('Login Failed')
+            return render(request, 'login.html',{"message": "Invalid UserName or Password"})
     else:
         return render(request, 'login.html')
 

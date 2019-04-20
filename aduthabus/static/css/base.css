@@ -1,22 +1,30 @@
-body {
+.home_body {
 	/* background-image: src("{% static 'backgroung_image.jpg' %} ") */
 	background: url('/static/background_image.jpg') no-repeat center center fixed; 
 
 	background-size: cover;
+	height: 700px;
+}
+*{
+	margin: 0;
+
+
 }
 
 .main_form {
+	
 	display: inline-block;
 	position: fixed;
 	text-align: center;
 	width: 200px;
-	height: 300px;
+	height: auto;
+	/* padding: 50px; */
 	margin: auto;
-	top: 0;
+	top: 80px;
 	left: 0;
 	right: 0;
-	bottom: 0;
-	background: rgba(255, 255, 0, 0.432);
+	/* bottom: 0; */
+	background: rgba(253, 253, 252, 0.253);
 	padding: 50px;
 	border-radius: 20px;
 
@@ -68,8 +76,16 @@ button:hover {
 
 .add_data_div{
 	
-	
-	background: rgba(243, 243, 235, 0.432);
+	position: absolute;
+	text-align: center;
+	width: auto;
+	height: auto;
+	/* padding: 50px; */
+	margin: auto;
+	top: 80px;
+	left: 5%;
+	right:5% ;
+	background: rgba(243, 243, 235, 0.966);
 	padding: 50px;
 	border-radius: 20px;
 
@@ -80,9 +96,50 @@ button:hover {
 	text-decoration: none; 
 	font-weight: bold;
 	font-size: 14px;
+	color: white;
 }
 
 
 #add_more{
 	display: none;
+}
+
+
+  
+  
+  #full_page {
+	position: relative;
+	min-height: 100vh;
+  }
+
+  .footer {
+	  background-color: rgb(12, 12, 22);
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;  
+	color:white;          /* Footer height */
+  }
+
+
+  .table{
+
+  background-color:rgba(51, 41, 9, 0.315);
+height: 900px;
+}
+
+
+
+.icon{
+	display: inline-block;
+}
+
+.icon a{
+	padding: 5px;
+	background-color: rgba(26, 30, 46, 0.521);
+	color: white;
+	margin: 10px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-size: 18px;
 }

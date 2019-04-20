@@ -3,27 +3,29 @@
 {% block content %}
 
 
-<div class="main_form">
+<div class="home_body">
+        <div align="center" class="main_form">
 
-    <div class="logo">
-        <img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
-    </div>
-
-    <form action="{% url 'bus:home_page' %}" method='POST'>
-        {% csrf_token %}
-        {% if unavailable_msg %}
-            <p style="color:red">**{{unavailable_msg}}</p>
-        {% endif %}
-        <!-- <p style="text-align:left">From :</p> -->
-        <input type="text" name="q_source" placeholder="source" autofocus/>
-        <!-- <p style="text-align:left ;left:10px">To :</p> -->
-        <input type="text" name="q_destination" placeholder="destination" />
-
-        <br>
-        <button type="submit" value="get time">Get Time</button>
-    </form>
-
-
+                <div class="logo">
+                        <img src="{% static 'logo_mal.png' %}" alt="My image" height="150px">
+                    </div>
+            
+                <form action="{% url 'bus:home_page' %}" method='POST'>
+                    {% csrf_token %}
+                    {% if unavailable_msg %}
+                        <p style="color:red">**{{unavailable_msg}}</p>
+                    {% endif %}
+                    <!-- <p style="text-align:left">From :</p> -->
+                    <input type="text" name="q_source" placeholder="source" autofocus/>
+                    <!-- <p style="text-align:left ;left:10px">To :</p> -->
+                    <input type="text" name="q_destination" placeholder="destination" />
+            
+                    <br>
+                    <button type="submit" value="get time">Get Time</button>
+                </form>
+            
+            
+            </div>
 </div>
 
 {% endblock content %}
