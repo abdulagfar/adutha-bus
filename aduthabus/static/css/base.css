@@ -18,7 +18,7 @@
 .main_form {
 	
 	display: inline-block;
-	position: fixed;
+	position: absolute;
 	text-align: center;
 	width: 200px;
 	height: auto;
