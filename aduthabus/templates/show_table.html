@@ -21,8 +21,8 @@
       
          <tr class="row" onclick="window.location='/bus_details/{{i.b_id}}/';">
           <td>{{i.b_name|upper}}</td>
-          <td>{{i.s_time}}</td> 
-          <td>{{i.r_time}}</td>
+          <td>{{i.s_time|time|upper}}</td> 
+          <td>{{i.r_time|time|upper}}</td>
         </tr>
         {% endfor %}
         
